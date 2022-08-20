@@ -1,8 +1,8 @@
 const libraryForm = document.querySelector("form");
-const btn = document.querySelector("button");
-const table = document.querySelector("#book-info");
-const headers = table.querySelector("thead tr");
-const body = table.querySelector("tbody");
+// const btn = document.querySelector("button");
+// const table = document.querySelector("#book-info");
+// const headers = table.querySelector("thead tr");
+// const body = table.querySelector("tbody");
 // const table = document.querySelector("table");
 
 myLibrary = [];
@@ -29,38 +29,34 @@ function addBookToLibrary(event) {
     return addBook
 }
 
-//Test
-const testBook = new Book("Maurice Sendak", "Where the Wild Things Are", "Read")
-
 // Create book when submit button is clicked
 libraryForm.addEventListener("submit", addBookToLibrary)
 
-
 function displayBook() {
-    // Header for myLibrary
-    for (const book in myLibrary[0]) {
-        const header = document.createElement("th");
-        header.innerText = book;
-        headers.append(header);
-    }
-    // Rows for myLibrary table
-    myLibrary.forEach(obj => {
-        const row = document.createElement("tr");
-        body.append(row)
-        // Element inside of row
-        for (const key in obj) {
-            const value = document.createElement("td");
-            value.innerText = obj[key];
-            row.append(value);
-        }
-        return obj
-    });
+    var table = document.getElementById("books");
+    var row = document.createElement("tr");
+    var cell = document.createElement("td");
+    var cellText = document.createTextNode(document.getElementById("author").value);
+    cell.appendChild(cellText);
+    row.appendChild(cell);
+
+    var cell = document.createElement("td");
+    var cellText = document.createTextNode(document.getElementById("title").value);
+    cell.appendChild(cellText);
+    row.appendChild(cell);
+
+    var cell = document.createElement("td");
+    var cellText = document.createTextNode(document.getElementById("read").value);
+    cell.appendChild(cellText);
+    row.appendChild(cell);
+    table.appendChild(row);
+
+    var cell = document.createElement("td");
+    var cellText = document.createTextNode(document.getElementById("pages").value);
+    cell.appendChild(cellText);
+    row.appendChild(cell);
+    table.appendChild(row);
 }
-
-
-
-
-
 
 // function displayBook() {
 //     for (let i = 0; i < myLibrary.length; i++) {

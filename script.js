@@ -1,9 +1,7 @@
 const libraryForm = document.querySelector("form");
-// const btn = document.querySelector("button");
-// const table = document.querySelector("#book-info");
-// const headers = table.querySelector("thead tr");
-// const body = table.querySelector("tbody");
-// const table = document.querySelector("table");
+const openModal = document.querySelector(".open-button")
+
+
 
 myLibrary = [];
 
@@ -25,58 +23,68 @@ function addBookToLibrary(event) {
     const addBook = new Book(author, title, read, pages)
     myLibrary.push(addBook)
     displayBook()
-    console.log(addBook)
     return addBook
 }
+
+
+openModal.addEventListener("click", () => {
+    modal.show();
+})
 
 // Create book when submit button is clicked
 libraryForm.addEventListener("submit", addBookToLibrary)
 
 function displayBook() {
-    var table = document.getElementById("books");
-    var row = document.createElement("tr");
-    var cell = document.createElement("td");
-    var cellText = document.createTextNode(document.getElementById("author").value);
-    cell.appendChild(cellText);
-    row.appendChild(cell);
+    console.log(...myLibrary);
+    const card = document.getElementById("books");
+    card.textContent = "";
+    myLibrary.forEach((book) => {
 
-    var cell = document.createElement("td");
-    var cellText = document.createTextNode(document.getElementById("title").value);
-    cell.appendChild(cellText);
-    row.appendChild(cell);
+        const authorText = document.createElement("Author");
+        authorText.textContent = book.author;
+        authorText.style.padding = "1px"
+        const header1 = document.createElement("h4")
+        header1.textContent = "Author"
 
-    var cell = document.createElement("td");
-    var cellText = document.createTextNode(document.getElementById("read").value);
-    cell.appendChild(cellText);
-    row.appendChild(cell);
-    table.appendChild(row);
+        const titleText = document.createElement("Titles");
+        titleText.textContent = book.title;
+        titleText.style.padding = "1px"
+        const header2 = document.createElement("h4")
+        header2.textContent = "Title"
 
-    var cell = document.createElement("td");
-    var cellText = document.createTextNode(document.getElementById("pages").value);
-    cell.appendChild(cellText);
-    row.appendChild(cell);
-    table.appendChild(row);
+        const pagesText = document.createElement("Pages");
+        pagesText.textContent = book.pages;
+        pagesText.style.padding = "1px"
+        const header3 = document.createElement("h4")
+        header3.textContent = "Pages"
+
+        const readText = document.createElement("Read");
+        readText.textContent = book.read;
+        readText.style.padding = "1px"
+        const header4 = document.createElement("h4")
+        header4.textContent = "Read"
+
+
+        const bookDiv = document.createElement("div");
+        bookDiv.append(header1, authorText);
+        bookDiv.append(header2, titleText);
+        bookDiv.append(header3, pagesText);
+        bookDiv.append(header4, readText);
+        card.append(bookDiv);
+    });
 }
 
-// function displayBook() {
-//     for (let i = 0; i < myLibrary.length; i++) {
-//         let html = "<table border= '1|1'>";
-//         html += "<tr>";
-//         html += "<th>" + "Author" + "</th>"
-//         html += "<td>" + myLibrary[i].author + "</td>";
-//         html += "</tr>";
-//         html += "<th>" + "Title" + "</th>"
-//         html += "<td>" + myLibrary[i].title + "</td>";
-//         html += "<tr>";
-//         html += "<th>" + "Read" + "</th>"
-//         html += "<td>" + myLibrary[i].read + "</td>";
-//         html += "</tr>";
-//         html += "<tr>";
-//         html += "<th>" + "Pages" + "</th>"
-//         html += "<td>" + myLibrary[i].pages + "</td>";
-//         html += "</tr>";
-//         html += "</table>";
-//         table.innerHTML = html;
-//     }
-// }
-
+// myLibrary.push(new Book('a', 'a', false, 1));
+// myLibrary.push(new Book('b', 'b', false, 2));
+// myLibrary.push(new Book('c', 'c', false, 3));
+// myLibrary.push(new Book('d', 'd', false, 4));
+// myLibrary.push(new Book('e', 'e', false, 5));
+// myLibrary.push(new Book('f', 'f', false, 6));
+// myLibrary.push(new Book('g', 'g', false, 7));
+// myLibrary.push(new Book('h', 'h', false, 8));
+// myLibrary.push(new Book('i', 'i', false, 9));
+// myLibrary.push(new Book('j', 'j', false, 10));
+// myLibrary.push(new Book('k', 'k', false, 11));
+// myLibrary.push(new Book('l', 'l', false, 12));
+// myLibrary.push(new Book('m', 'm', false, 13));
+console.log(myLibrary)

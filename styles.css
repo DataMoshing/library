@@ -1,0 +1,43 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+} */
+
+#books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 10px;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#modal {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    top: 20%;
+}
+
+input[type="number"] {
+    width: 50px;
+}
+
+#read {
+    padding-right: 10px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .header-container>p {
+    padding: 5px;
+} */

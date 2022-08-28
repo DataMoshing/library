@@ -20,19 +20,19 @@ function addBookToLibrary(event) {
     const author = document.querySelector("#author").value;
     const read = document.querySelector("#read").value;
     const pages = document.querySelector("#pages").value;
-    const addBook = new Book(author, title, read, pages)
-    myLibrary.push(addBook)
-    displayBook()
-    return addBook
+    const addBook = new Book(author, title, read, pages);
+    myLibrary.push(addBook);
+    displayBook();
+    return addBook;
 }
 
-
+// Modal pops open with form from dialog element
 openModal.addEventListener("click", () => {
-    modal.show();
+    modal.showModal();
 })
 
 // Create book when submit button is clicked
-libraryForm.addEventListener("submit", addBookToLibrary)
+libraryForm.addEventListener("submit", addBookToLibrary);
 
 function displayBook() {
     console.log(...myLibrary);
@@ -42,38 +42,44 @@ function displayBook() {
 
         const authorText = document.createElement("Author");
         authorText.textContent = book.author;
-        authorText.style.padding = "1px"
-        const header1 = document.createElement("h4")
-        header1.textContent = "Author"
+        const header1 = document.createElement("h4");
+        header1.textContent = "Author";
 
         const titleText = document.createElement("Titles");
         titleText.textContent = book.title;
-        titleText.style.padding = "1px"
-        const header2 = document.createElement("h4")
-        header2.textContent = "Title"
+        const header2 = document.createElement("h4");
+        header2.textContent = "Title";
 
         const pagesText = document.createElement("Pages");
         pagesText.textContent = book.pages;
-        pagesText.style.padding = "1px"
-        const header3 = document.createElement("h4")
-        header3.textContent = "Pages"
+        const header3 = document.createElement("h4");
+        header3.textContent = "Pages";
 
         const readText = document.createElement("Read");
         readText.textContent = book.read;
-        readText.style.padding = "1px"
-        const header4 = document.createElement("h4")
-        header4.textContent = "Read"
+        const header4 = document.createElement("h4");
+        header4.textContent = "Read";
 
 
         const bookDiv = document.createElement("div");
+        bookDiv.style.borderRadius = "15px";
+        bookDiv.style.textAlign = "center";
+        bookDiv.style.boxShadow = "0 3px 10px rgb(0 0 0 / 0.5)"
+        bookDiv.style.paddingBottom = "20px";
+
+        const removeBtn = document.createElement("button");
+        removeBtn.innerHTML = "Remove"
+        removeBtn.addEventListener("click", function () {
+
+        })
+        bookDiv.append(removeBtn)
         bookDiv.append(header1, authorText);
         bookDiv.append(header2, titleText);
         bookDiv.append(header3, pagesText);
         bookDiv.append(header4, readText);
         card.append(bookDiv);
-    });
+    })
 }
-
 // myLibrary.push(new Book('a', 'a', false, 1));
 // myLibrary.push(new Book('b', 'b', false, 2));
 // myLibrary.push(new Book('c', 'c', false, 3));
@@ -88,3 +94,9 @@ function displayBook() {
 // myLibrary.push(new Book('l', 'l', false, 12));
 // myLibrary.push(new Book('m', 'm', false, 13));
 console.log(myLibrary)
+
+const books_ = document.querySelectorAll("#books")
+
+books_.forEach(e => {
+    console.log(e.dataset)
+})

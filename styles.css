@@ -1,29 +1,107 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border: none;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 
-#books {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 10px;
+* {
+    /* margin: 0; */
+    /*
+    padding: 0;
+    border: 0; */
+    /* border: none; */
+    /* box-sizing: border-box;
+    text-decoration: none;
+    list-style: none; */
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Cardo", serif;
+    margin: 0;
+}
+
+#books {
+    display: grid;
+    font-size: large;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 15px;
+    margin: 2rem 5rem;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 0.5);
+    margin: 0 0 1rem;
+    padding-top: 1rem;
+}
+
+.top-content {
+    display: flex;
+    flex-direction: column;
+    /* margin: 1rem; */
+    font-size: larger;
 }
 
 #modal {
-    width: 200px;
-    height: 150px;
     border-radius: 10px;
-    top: 20%;
+    /* top: 20%; */
+    border: none;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+    font-size: large;
+    height: 260px;
+    width: 200px;
 }
+
+.open-button {
+    width: 175px;
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border: none;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 55px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.open-button:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.open-button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.open-button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
 
 input[type="number"] {
     width: 50px;
@@ -33,11 +111,19 @@ input[type="number"] {
     padding-right: 10px;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
+label {
+    margin-top: 10px;
 }
 
-/* .header-container>p {
-    padding: 5px;
-} */
+.submit-btn {
+    display: flex;
+    justify-self: flex-end;
+    margin-top: 10px;
+    width: 75px;
+    margin-left: 8rem;
+}
+
+.library-form {
+    display: flex;
+    flex-direction: column;
+}

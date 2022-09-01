@@ -1,7 +1,6 @@
 const libraryForm = document.querySelector("form");
-const openModal = document.querySelector(".open-button")
-
-
+const openModal = document.querySelector(".open-button");
+const bookIndex = document.querySelectorAll("#books");
 
 myLibrary = [];
 
@@ -42,36 +41,34 @@ function displayBook() {
 
         const authorText = document.createElement("Author");
         authorText.textContent = book.author;
-        const header1 = document.createElement("h4");
+        const header1 = document.createElement("h3");
         header1.textContent = "Author";
 
         const titleText = document.createElement("Titles");
         titleText.textContent = book.title;
-        const header2 = document.createElement("h4");
+        const header2 = document.createElement("h3");
         header2.textContent = "Title";
 
         const pagesText = document.createElement("Pages");
         pagesText.textContent = book.pages;
-        const header3 = document.createElement("h4");
+        const header3 = document.createElement("h3");
         header3.textContent = "Pages";
 
         const readText = document.createElement("Read");
         readText.textContent = book.read;
-        const header4 = document.createElement("h4");
+        const header4 = document.createElement("h3");
         header4.textContent = "Read";
 
-
         const bookDiv = document.createElement("div");
-        bookDiv.style.borderRadius = "15px";
-        bookDiv.style.textAlign = "center";
-        bookDiv.style.boxShadow = "0 3px 10px rgb(0 0 0 / 0.5)"
-        bookDiv.style.paddingBottom = "20px";
+        bookDiv.className = "book-div"
 
         const removeBtn = document.createElement("button");
-        removeBtn.innerHTML = "Remove"
+        removeBtn.className = "remove-book"
+        removeBtn.innerHTML = "+"
         removeBtn.addEventListener("click", function () {
 
-        })
+
+        });
         bookDiv.append(removeBtn)
         bookDiv.append(header1, authorText);
         bookDiv.append(header2, titleText);
@@ -81,22 +78,3 @@ function displayBook() {
     })
 }
 // myLibrary.push(new Book('a', 'a', false, 1));
-// myLibrary.push(new Book('b', 'b', false, 2));
-// myLibrary.push(new Book('c', 'c', false, 3));
-// myLibrary.push(new Book('d', 'd', false, 4));
-// myLibrary.push(new Book('e', 'e', false, 5));
-// myLibrary.push(new Book('f', 'f', false, 6));
-// myLibrary.push(new Book('g', 'g', false, 7));
-// myLibrary.push(new Book('h', 'h', false, 8));
-// myLibrary.push(new Book('i', 'i', false, 9));
-// myLibrary.push(new Book('j', 'j', false, 10));
-// myLibrary.push(new Book('k', 'k', false, 11));
-// myLibrary.push(new Book('l', 'l', false, 12));
-// myLibrary.push(new Book('m', 'm', false, 13));
-console.log(myLibrary)
-
-const books_ = document.querySelectorAll("#books")
-
-books_.forEach(e => {
-    console.log(e.dataset)
-})

@@ -37,8 +37,7 @@ function displayBook() {
     console.log(...myLibrary);
     const card = document.getElementById("books");
     card.textContent = "";
-    myLibrary.forEach((book) => {
-
+    myLibrary.forEach((book, i) => {
         const authorText = document.createElement("Author");
         authorText.textContent = book.author;
         const header1 = document.createElement("h3");
@@ -61,14 +60,17 @@ function displayBook() {
 
         const bookDiv = document.createElement("div");
         bookDiv.className = "book-div"
+        bookDiv.setAttribute("data-book-index", i)
 
         const removeBtn = document.createElement("button");
         removeBtn.className = "remove-book"
         removeBtn.innerHTML = "+"
+
         removeBtn.addEventListener("click", function () {
-
-
+            myLibrary.splice(book, 1)
+            bookDiv.remove()
         });
+
         bookDiv.append(removeBtn)
         bookDiv.append(header1, authorText);
         bookDiv.append(header2, titleText);
@@ -77,4 +79,7 @@ function displayBook() {
         card.append(bookDiv);
     })
 }
-// myLibrary.push(new Book('a', 'a', false, 1));
+
+Book.prototype.read = function () {
+    console.log(read.value)
+}

@@ -9,7 +9,7 @@ function Book(author, title, read, pages) {
     this.author = author;
     this.title = title;
     this.read = read;
-    this.pages = pages
+    this.pages = pages;
 }
 
 //Create instance of object then push to myLibrary array
@@ -19,7 +19,7 @@ function addBookToLibrary(event) {
     const author = document.querySelector("#author").value;
     const read = document.querySelector("#read").value;
     const pages = document.querySelector("#pages").value;
-    const addBook = new Book(author, title, read, pages);
+    const addBook = new Book(author, title, read, pages)
     myLibrary.push(addBook);
     displayBook();
     return addBook;
@@ -59,19 +59,21 @@ function displayBook() {
         header4.textContent = "Read";
 
         const bookDiv = document.createElement("div");
-        bookDiv.className = "book-div"
-        bookDiv.setAttribute("data-book-index", i)
+        bookDiv.className = "book-div";
+        bookDiv.setAttribute("data-book-index", i);
 
         const removeBtn = document.createElement("button");
-        removeBtn.className = "remove-book"
-        removeBtn.innerHTML = "+"
+        removeBtn.className = "remove-book";
+        removeBtn.innerHTML = "+";
 
         removeBtn.addEventListener("click", function () {
-            myLibrary.splice(book, 1)
+            myLibrary.splice(book, i)
             bookDiv.remove()
+            displayBook()
         });
 
-        bookDiv.append(removeBtn)
+
+        bookDiv.append(removeBtn);
         bookDiv.append(header1, authorText);
         bookDiv.append(header2, titleText);
         bookDiv.append(header3, pagesText);
@@ -81,5 +83,5 @@ function displayBook() {
 }
 
 Book.prototype.read = function () {
-    console.log(read.value)
+
 }

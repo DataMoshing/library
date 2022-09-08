@@ -11,7 +11,10 @@ function Book(author, title, read, pages) {
     this.read = read;
     this.pages = pages;
 }
+Book.prototype.toggleRead = function () {
 
+    this.read = !this.read;
+}
 //Create instance of object then push to myLibrary array
 function addBookToLibrary(event) {
     event.preventDefault();
@@ -19,7 +22,7 @@ function addBookToLibrary(event) {
     const author = document.querySelector("#author").value;
     const read = document.querySelector("#read").value;
     const pages = document.querySelector("#pages").value;
-    const addBook = new Book(author, title, read, pages)
+    const addBook = new Book(author, title, read, pages);
     myLibrary.push(addBook);
     displayBook();
     return addBook;
@@ -34,7 +37,6 @@ openModal.addEventListener("click", () => {
 libraryForm.addEventListener("submit", addBookToLibrary);
 
 function displayBook() {
-    console.log(...myLibrary);
     const card = document.getElementById("books");
     card.textContent = "";
     myLibrary.forEach((book, i) => {
@@ -67,10 +69,18 @@ function displayBook() {
         removeBtn.innerHTML = "+";
 
         removeBtn.addEventListener("click", function () {
-            myLibrary.splice(book, i)
+            myLibrary.splice(book, 1)
             bookDiv.remove()
             displayBook()
         });
+
+        readText.addEventListener("click", () => {
+            if (readText.textContent === "Read") {
+                readText.textContent = "Not read"
+            } else {
+                readText.textContent = "Read"
+            }
+        })
 
 
         bookDiv.append(removeBtn);
@@ -82,6 +92,3 @@ function displayBook() {
     })
 }
 
-Book.prototype.read = function () {
-
-}

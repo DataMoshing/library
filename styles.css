@@ -60,7 +60,7 @@ h1 {
     border: none;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
     font-size: large;
-    height: 260px;
+    height: 310px;
     width: 200px;
 }
 
@@ -97,8 +97,15 @@ h1 {
     font-size: 18px;
 }
 
+p {
+    display: flex;
+    font-size: medium;
+    justify-content: center;
+}
+
 .open-button:focus {
     box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    outline: none;
 }
 
 .open-button:hover {

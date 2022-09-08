@@ -82,7 +82,6 @@ function displayBook() {
             }
         })
 
-
         bookDiv.append(removeBtn);
         bookDiv.append(header1, authorText);
         bookDiv.append(header2, titleText);

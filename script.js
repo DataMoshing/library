@@ -12,7 +12,6 @@ function Book(author, title, read, pages) {
     this.pages = pages;
 }
 Book.prototype.toggleRead = function () {
-
     this.read = !this.read;
 }
 //Create instance of object then push to myLibrary array
@@ -78,6 +77,7 @@ function displayBook() {
             if (readText.textContent === "Read") {
                 readText.textContent = "Not read"
             } else {
+                readText.textContent === "Not read"
                 readText.textContent = "Read"
             }
         })

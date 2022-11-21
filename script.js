@@ -5,12 +5,28 @@ const bookIndex = document.querySelectorAll("#books");
 myLibrary = [];
 
 // Constructor function for books
-function Book(author, title, read, pages) {
-    this.author = author;
-    this.title = title;
-    this.read = read;
-    this.pages = pages;
+// function Book(author, title, read, pages) {
+//     this.author = author;
+//     this.title = title;
+//     this.read = read;
+//     this.pages = pages;
+// }
+
+class Book {
+    constructor(author, title, read, pages) {
+        this.author = author;
+        this.title = title;
+        this.read = read;
+        this.pages = pages;
+
+    }
+    toggleRead() {
+        this.read = !this.read
+    }
+
 }
+
+
 Book.prototype.toggleRead = function () {
     this.read = !this.read;
 }

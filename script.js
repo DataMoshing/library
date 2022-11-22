@@ -26,10 +26,9 @@ class Book {
 
 }
 
-
-Book.prototype.toggleRead = function () {
-    this.read = !this.read;
-}
+// Book.prototype.toggleRead = function () {
+//     this.read = !this.read;
+// }
 //Create instance of object then push to myLibrary array
 function addBookToLibrary(event) {
     event.preventDefault();

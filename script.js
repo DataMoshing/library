@@ -1,6 +1,7 @@
 const libraryForm = document.querySelector("form");
 const openModal = document.querySelector(".open-button");
 const bookIndex = document.querySelectorAll("#books");
+const title = document.querySelector("#title")
 
 myLibrary = [];
 
@@ -25,6 +26,14 @@ class Book {
     }
 
 }
+
+title.addEventListener("input", (event) => {
+    if (title.validity.valueMissing) {
+        title.setCustomValidity("I am expecting a title!")
+    } else {
+        title.setCustomValidity("")
+    }
+})
 
 // Book.prototype.toggleRead = function () {
 //     this.read = !this.read;
